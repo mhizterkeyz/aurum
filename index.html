@@ -237,7 +237,7 @@ footer a:hover{color:var(--gh)}
 
 <main id="top">
   <section class="hero">
-    <img src="img/hero-layer.jpg" alt="Layered yellow gold necklaces worn at the collarbone">
+    <img src="img/hero-22.jpg" alt="A heavy yellow gold curb chain worn at the collarbone">
     <div class="veil"></div>
     <div class="wrap">
       <p class="eyebrow">Family jewellers · Walsall</p>
@@ -262,8 +262,8 @@ footer a:hover{color:var(--gh)}
 
     <div class="stories">
       <a class="story big" href="#look">
-        <img src="img/edit-pearl.jpg" alt="Freshwater pearls layered over a fine gold chain">
-        <div class="cap"><p class="eyebrow">22ct gold</p><h2>Worn for the day</h2><p>Chains and pearls, the way they’re stacked in the shop.</p></div>
+        <img src="img/story-gold.jpg" alt="A heavy yellow gold chain and gold hoop worn in the showroom">
+        <div class="cap"><p class="eyebrow">22ct gold</p><h2>Worn for the day</h2><p>A heavy chain, the kind weighed and sold in the shop.</p></div>
       </a>
       <a class="story" href="#faq">
         <img src="img/edit-box.jpg" alt="Hands lifting a gold curb chain from a cream jewellery box">
@@ -277,7 +277,7 @@ footer a:hover{color:var(--gh)}
     <div class="shop-head" id="shop">
       <div class="crumb"><a href="#top">Laxmi Jewellers</a> / Showroom</div>
       <h1 class="page">Styles we make</h1>
-      <p class="intro">Chains, pearls and pendants from the Walsall showroom. Gold is sold by weight at the day’s rate, so the price is agreed in the shop.</p>
+      <p class="intro">Chains, pendants, bridal diamonds and 24ct coins from the Walsall showroom. Gold is sold by weight at the day’s rate, so the price is agreed in the shop.</p>
       <div class="chips" id="chips"></div>
     </div>
     <div class="bar"><span id="cnt">8 styles</span><label>Search is above, or filter by what you came in for.</label></div>
@@ -285,13 +285,13 @@ footer a:hover{color:var(--gh)}
 
     <section class="look" id="look">
       <figure>
-        <img src="img/look-jewels.jpg" alt="">
-        <video id="lookv" src="img/look-jewels.mp4" poster="img/look-jewels.jpg" autoplay muted loop playsinline aria-label="Layered gold necklaces and a pearl strand"></video>
+        <img src="img/look-22.jpg" alt="">
+        <video id="lookv" src="img/look-22.mp4" poster="img/look-22.jpg" autoplay muted loop playsinline aria-label="A heavy yellow gold curb chain"></video>
       </figure>
       <div>
         <p class="eyebrow">In the shop</p>
-        <h2>Layered gold, the way it’s worn.</h2>
-        <p class="lead">A pearl strand with fine and curb chains. Pieces like these are made, sized and altered on Wednesbury Road.</p>
+        <h2>Heavy gold, the way it’s worn.</h2>
+        <p class="lead">A heavy yellow-gold curb. Chains like this are weighed, sized and altered on Wednesbury Road.</p>
         <div class="picks" id="picks"></div>
       </div>
     </section>
@@ -341,12 +341,12 @@ footer a:hover{color:var(--gh)}
 const $=id=>document.getElementById(id);
 const D=[
   {name:"22ct curb chain",note:"Priced by weight",badge:"22ct",tags:"gold chain",img:"img/p-cuban.jpg"},
-  {name:"Pearl and gold strand",note:"Bridal",badge:"Bridal",tags:"pearl gold bridal",img:"img/p-pearl.jpg"},
+  {name:"24ct gold coin",note:"Coins and bars",badge:"24ct",tags:"gold coin",img:"img/p-coin.jpg"},
   {name:"Gold heart pendant",note:"22ct",badge:"",tags:"gold pendant",img:"img/p-heart.jpg"},
-  {name:"Diamond line necklace",note:"Bridal",badge:"Diamond",tags:"bridal",img:"img/p-tennis.jpg"},
+  {name:"Diamond line necklace",note:"Bridal",badge:"Diamond",tags:"bridal",img:"img/p-diamond-gold.jpg"},
   {name:"Gold bead strands",note:"Layered in store",badge:"22ct",tags:"gold",img:"img/p-beads.jpg"},
-  {name:"Initial pendant",note:"Letter made to order",badge:"Bespoke",tags:"gold pendant bespoke",img:"img/p-initial.jpg"},
-  {name:"Diamond drop pendant",note:"Ask in store",badge:"Diamond",tags:"bridal pendant",img:"img/p-crystal.jpg"},
+  {name:"Gold medallion",note:"Plain, or engraved to order",badge:"Bespoke",tags:"gold pendant bespoke",img:"img/p-medallion.jpg"},
+  {name:"Diamond drop pendant",note:"Ask in store",badge:"Diamond",tags:"bridal pendant",img:"img/p-gold-drop.jpg"},
   {name:"Gold cross pendant",note:"22ct",badge:"",tags:"gold pendant",img:"img/p-cross.jpg"}
 ];
 const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9a4 4 0 017-2.7A4 4 0 0119 12c0 4.6-7 9-7 9z"/></svg>';
@@ -361,23 +361,23 @@ $("grid").innerHTML=D.map((d,i)=>{
   </article>`;
 }).join("");
 
-const CATS=[["22ct gold","img/p-cuban.jpg","gold"],["Pearl","img/p-pearl.jpg","pearl"],["Chains","img/p-cuban.jpg","chain"],["Bridal","img/p-pearl.jpg","bridal"],["Pendants","img/p-heart.jpg","pendant"],["Bespoke","img/p-initial.jpg","bespoke"]];
+const CATS=[["22ct gold","img/p-cuban.jpg","gold"],["24ct","img/p-coin.jpg","coin"],["Chains","img/p-cuban.jpg","chain"],["Bridal","img/p-diamond-gold.jpg","bridal"],["Pendants","img/p-heart.jpg","pendant"],["Bespoke","img/p-medallion.jpg","bespoke"]];
 $("cats").innerHTML=CATS.map(c=>`<a class="cat" href="#grid" data-f="${c[2]}"><i><img src="${c[1]}" alt=""></i>${c[0]}</a>`).join("");
 
-const LOOK=[1,0,4];
+const LOOK=[0,5,4];
 $("picks").innerHTML=LOOK.map(i=>{
   const d=D[i];
   return `<article class="pick"><img src="${d.img}" alt=""><div><h3>${d.name}</h3><p>${d.note}</p></div><button type="button" data-add="${i}">Ask</button></article>`;
 }).join("");
 
-const M={"22ct gold":[["In the showroom",["Chains","Pendants","Beads","Pearls"]]],"Bridal":[["For the wedding",["Bridal sets","Engagement","Diamond line","Bespoke"]]],"Bespoke":[["Made to order",["From a photo","Initials","Sizing","Repairs"]]],"We buy gold":[["At the counter",["Old gold valued in store","24ct coins and bars"]]],"Visit":[["Walsall",["207 Wednesbury Road","Monday to Saturday","11:30am to 6pm","01922 643089"]]]};
+const M={"22ct gold":[["In the showroom",["Chains","Pendants","Beads","Medallions"]]],"Bridal":[["For the wedding",["Bridal sets","Engagement","Diamond line","Bespoke"]]],"Bespoke":[["Made to order",["From a photo","Engraving","Sizing","Repairs"]]],"We buy gold":[["At the counter",["Old gold valued in store","24ct coins and bars"]]],"Visit":[["Walsall",["207 Wednesbury Road","Monday to Saturday","11:30am to 6pm","01922 643089"]]]};
 $("nav").innerHTML=Object.entries(M).map(([k,v])=>`<li><a href="#grid">${k}</a><div class="mega"><div class="wrap">${v.map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(x=>`<li><a href="#grid">${x}</a></li>`).join("")}</ul></div>`).join("")}</div></div></li>`).join("");
 
 const an=[...document.querySelectorAll(".ann div")];
 let ai=0;
 setInterval(()=>{an[ai].className="out";ai=(ai+1)%an.length;an[ai].className="";void an[ai].offsetWidth;an[ai].className="on";setTimeout(()=>an.forEach((e,i)=>{if(i!==ai)e.className=""}),700)},4200);
 
-const chips=[["All","all"],["22ct gold","gold"],["Pearl","pearl"],["Pendant","pendant"],["Bridal","bridal"],["Bespoke","bespoke"]];
+const chips=[["All","all"],["22ct gold","gold"],["24ct","coin"],["Pendant","pendant"],["Bridal","bridal"],["Bespoke","bespoke"]];
 let cur="all";
 $("chips").innerHTML=chips.map((c,i)=>`<button class="chip${i?"":" on"}" data-f="${c[1]}">${c[0]}</button>`).join("");
 const cards=[...document.querySelectorAll(".card")];
