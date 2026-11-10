@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Necklaces — Aurum Lane</title>
+<title>Necklaces — Laxmi Jewellers</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap">
 <style>
 :root{--bg:#0e0e0e;--sf:#171717;--sf2:#242424;--tx:#f6f1e8;--mu:#b7b1a6;--ln:#2c2c2c;--gold:#d9ac3c;--gh:#f2d27a;--sale:#e5484d;--btn:#f3f1ec;--btx:#121212;--paper:#f3efe8;
@@ -29,8 +29,9 @@ ul{list-style:none;margin:0;padding:0}
 .util button{background:none;border:0;padding:0;color:inherit}
 
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}
-.hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
-.logo{font-weight:500;font-size:20px;letter-spacing:.34em;text-transform:uppercase;padding-left:.34em}
+.hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+.logo{font-weight:500;font-size:18px;letter-spacing:.28em;text-transform:uppercase;padding-left:.28em;line-height:1;text-align:center}
+.logo small{display:block;margin-top:5px;font-size:9px;letter-spacing:.42em;font-weight:500;padding-left:.42em}
 .nav{display:flex;height:100%;gap:4px}
 .nav li{display:flex;align-items:center}
 .nav>li>a{padding:0 12px;height:100%;display:flex;align-items:center;font-weight:500;font-size:14px;position:relative}
@@ -126,8 +127,9 @@ h1.page{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size
 .pr{font-weight:500}.pr s{color:var(--mu);font-weight:400;margin-left:8px}.pr em{font-style:normal;color:var(--sale);margin-left:8px;font-size:13px}
 
 .look{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin:72px 0 20px;align-items:center}
-.look figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#ddd}
-.look img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.look figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#ddd;position:relative}
+.look img,.look video{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.look video{position:absolute;inset:0;background:#1a1612}
 .look h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(40px,4vw,64px);line-height:.95;margin:0 0 12px}
 .look .lead{color:var(--mu);margin:0 0 22px;max-width:440px}
 .picks{display:grid;gap:12px}
@@ -203,7 +205,8 @@ footer a:hover{color:var(--gh)}
 @media(max-width:760px){
   .nav,.util a{display:none}
   .hdr{grid-template-columns:auto 1fr}
-  .logo{font-size:15px;letter-spacing:.22em;padding-left:.22em}
+  .logo{font-size:15px;letter-spacing:.2em;padding-left:.2em}
+  .logo small{letter-spacing:.28em;padding-left:.28em}
   .hero{min-height:86vh}
   .hero .veil{background:linear-gradient(transparent 20%,rgba(8,7,6,.82))}
   .hero .wrap{padding-bottom:36px}
@@ -216,19 +219,19 @@ footer a:hover{color:var(--gh)}
   .pick{grid-template-columns:64px 1fr}
   .pick button{grid-column:2}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.look video{display:none}}
 </style>
 </head>
 <body>
-<div class="ann"><div class="on">20% off when you spend £30. Cyber Sale ends tonight</div><div>Free UK delivery on orders over £25</div><div>Every necklace arrives in a gift box</div></div>
-<div class="wrap util"><a href="#footer">Find a store</a><a href="#nl">Sign in</a><a href="#grid">Wishlist</a><button id="theme">Light mode</button></div>
+<div class="ann"><div class="on">207 Wednesbury Road, Walsall WS2 9QL</div><div>Open Monday to Saturday, 11:30am to 6pm · Sunday closed</div><div>22ct gold, bridal sets, bespoke pieces, and we buy old gold</div></div>
+<div class="wrap util"><a href="https://share.google/SHZPJLVJ2I0hJSF7M" target="_blank" rel="noopener">Find a store</a><a href="#nl">Sign in</a><a href="#grid">Wishlist</a><button id="theme">Light mode</button></div>
 <header><div class="wrap hdr">
   <ul class="nav" id="nav"></ul>
-  <a class="logo" href="#top">Aurum Lane</a>
+  <a class="logo" href="#top">Laxmi<small>Jewellers</small></a>
   <div class="act">
-    <label class="sr"><input id="q" placeholder="Search necklaces" aria-label="Search"></label>
+    <label class="sr"><input id="q" placeholder="Search styles" aria-label="Search"></label>
     <button class="ib" id="wlb" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9a4 4 0 017-2.7A4 4 0 0119 12c0 4.6-7 9-7 9z"/></svg><b id="wc" hidden>0</b></button>
-    <button class="ib" id="bagb" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><b id="bc">0</b></button>
+    <button class="ib" id="bagb" aria-label="Open shortlist"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><b id="bc">0</b></button>
   </div>
 </div></header>
 
@@ -237,21 +240,21 @@ footer a:hover{color:var(--gh)}
     <img src="img/hero-layer.jpg" alt="Layered yellow gold necklaces worn at the collarbone">
     <div class="veil"></div>
     <div class="wrap">
-      <p class="eyebrow">The layering edit</p>
-      <h1>Three lengths. One neckline.</h1>
-      <p>Chains, pearls and pendants in yellow gold and sterling silver, finished to be worn every day.</p>
+      <p class="eyebrow">Family jewellers · Walsall</p>
+      <h1>22 carat gold, kept in the family.</h1>
+      <p>Bridal sets, chains and pieces made to order. We also keep 24ct coins and bars, and we value old gold in the shop.</p>
       <div class="hero-actions">
-        <a class="btn" href="#grid">Shop necklaces</a>
-        <a class="btn ghost" href="#look">Shop the look</a>
+        <a class="btn" href="#grid">See the showroom</a>
+        <a class="btn ghost" href="tel:+441922643089">Call the shop</a>
       </div>
     </div>
   </section>
 
   <div class="trust wrap">
-    <div><strong>Free UK delivery</strong>On orders over £25</div>
-    <div><strong>Waterproof gold</strong>Shower and sea safe</div>
-    <div><strong>Gift boxed</strong>Ready to give tonight</div>
-    <div><strong>Easy returns</strong>30 days, no fuss</div>
+    <div><strong>22ct hallmarked gold</strong>Priced on the day’s rate</div>
+    <div><strong>Bridal and bespoke</strong>Made for the occasion</div>
+    <div><strong>We buy old gold</strong>Valued in the shop</div>
+    <div><strong>Repairs in store</strong>Polish and alterations</div>
   </div>
 
   <div class="wrap">
@@ -260,72 +263,75 @@ footer a:hover{color:var(--gh)}
     <div class="stories">
       <a class="story big" href="#look">
         <img src="img/edit-pearl.jpg" alt="Freshwater pearls layered over a fine gold chain">
-        <div class="cap"><p class="eyebrow">Worn together</p><h2>The pearl edit</h2><p>A strand, a fine chain, and nothing else competing.</p></div>
+        <div class="cap"><p class="eyebrow">22ct gold</p><h2>Worn for the day</h2><p>Chains and pearls, the way they’re stacked in the shop.</p></div>
       </a>
-      <a class="story" href="#grid">
+      <a class="story" href="#faq">
         <img src="img/edit-box.jpg" alt="Hands lifting a gold curb chain from a cream jewellery box">
-        <div class="cap"><h2>Gift boxed</h2><p>Arrives ready to hand over.</p></div>
+        <div class="cap"><h2>Made to order</h2><p>Bring a photo or a sketch. We make it here.</p></div>
       </a>
-      <a class="story sale hot" href="#grid">
-        <div class="cap"><span class="tag">Cyber Sale</span><h2>20% off</h2><p>When you spend £30. Applied in your bag.</p><div class="cd" role="timer" aria-label="Sale countdown"><b id="h">00</b><b id="m">00</b><b id="s">00</b></div></div>
+      <a class="story sale" href="tel:+441922643089">
+        <div class="cap"><span class="tag">Visit</span><h2>Walsall</h2><p>Monday to Saturday, 11:30am to 6pm. Sunday closed. 01922 643089.</p></div>
       </a>
     </div>
 
     <div class="shop-head" id="shop">
-      <div class="crumb"><a href="#top">All jewellery</a> / Necklaces</div>
-      <h1 class="page">Necklaces</h1>
-      <p class="intro">Pendants, pearls, chains and chokers. Filter by metal, then layer more than one.</p>
+      <div class="crumb"><a href="#top">Laxmi Jewellers</a> / Showroom</div>
+      <h1 class="page">Styles we make</h1>
+      <p class="intro">Chains, pearls and pendants from the Walsall showroom. Gold is sold by weight at the day’s rate, so the price is agreed in the shop.</p>
       <div class="chips" id="chips"></div>
     </div>
-    <div class="bar"><span id="cnt">8 products</span><label>Sort by <select id="sort" aria-label="Sort products"><option value="0">Featured</option><option value="1">Price: low to high</option><option value="2">Price: high to low</option></select></label></div>
+    <div class="bar"><span id="cnt">8 styles</span><label>Search is above, or filter by what you came in for.</label></div>
     <div class="grid" id="grid"></div>
 
     <section class="look" id="look">
-      <figure><img src="img/edit-pearl.jpg" alt="A pearl necklace worn with a fine gold chain"></figure>
+      <figure>
+        <img src="img/look-jewels.jpg" alt="">
+        <video id="lookv" src="img/look-jewels.mp4" poster="img/look-jewels.jpg" autoplay muted loop playsinline aria-label="Layered gold necklaces and a pearl strand"></video>
+      </figure>
       <div>
-        <p class="eyebrow">Styled on</p>
-        <h2>Start with the pearl, add a chain.</h2>
-        <p class="lead">The same three pieces from the campaign, sold separately so you can build the stack.</p>
+        <p class="eyebrow">In the shop</p>
+        <h2>Layered gold, the way it’s worn.</h2>
+        <p class="lead">A pearl strand with fine and curb chains. Pieces like these are made, sized and altered on Wednesbury Road.</p>
         <div class="picks" id="picks"></div>
       </div>
     </section>
 
-    <section class="reviews">
-      <h2>From people who wear them daily</h2>
+    <section class="reviews" id="visit">
+      <h2>Come to the shop</h2>
       <div class="rev">
-        <article><div class="star">★★★★★</div><p>“The Cuban chain did a week on the coast and still looks like the photo.”</p><span>Amira · Bristol · Waterproof Gold Cuban Chain</span></article>
-        <article><div class="star">★★★★★</div><p>“Layered the beads with the initial. It reads much more expensive than it was.”</p><span>Jess · Leeds · Gold Bead Layered Necklace</span></article>
-        <article><div class="star">★★★★★</div><p>“The pearl strand is the one I forget I’m wearing, which is the point.”</p><span>Hannah · London · Freshwater Pearl Necklace</span></article>
+        <article><div class="star">Address</div><p>207 Wednesbury Road, Walsall, WS2 9QL</p><span>The showroom listed on Google</span></article>
+        <article><div class="star">Hours</div><p>Monday to Saturday, 11:30am to 6pm. Sunday closed.</p><span>As listed on Google</span></article>
+        <article><div class="star">Call</div><p><a href="tel:+441922643089">01922 643089</a></p><span><a href="mailto:info@laxmigold.co.uk">info@laxmigold.co.uk</a></span></article>
       </div>
     </section>
 
     <div class="seo">
-      <div><h2>How to layer</h2><p>Put the shortest chain at the base of the neck, a mid strand on the collarbone, and one pendant lower. Mix a fine trace chain with something heavier so the lengths don’t tangle.</p></div>
-      <div><h2>Metals</h2><p>Yellow gold plate over brass, and sterling silver. Waterproof pieces are labelled on the card and are made to be worn in the shower and the sea. Pearls prefer to come off for swimming.</p></div>
+      <div><h2>What the shop does</h2><p>22ct gold jewellery, bridal and engagement sets, and pieces made to order. There are also 24ct coins and bars if you are buying gold to keep.</p></div>
+      <div><h2>If you are selling</h2><p>Bring old gold in and it is valued in the shop. Repairs, sizing and a polish are done here too, rather than sent away.</p></div>
     </div>
     <div class="faq" id="faq">
       <h2>Questions</h2>
-      <div class="q"><button>Can I wear more than one necklace at once?</button><div><p>Yes. That’s how this edit is built. Different lengths and a mix of chain and pearl sit cleanly together.</p></div></div>
-      <div class="q"><button>Which necklaces are waterproof?</button><div><p>The Cuban chain and the gold bead strand. They’re marked on the product card. Pearls and the crystal drop should stay dry.</p></div></div>
-      <div class="q"><button>How does the 20% off work?</button><div><p>Spend £30 and the discount is taken off in your bag. Delivery is free from £25, otherwise it’s £3.95.</p></div></div>
+      <div class="q"><button>How is the gold priced?</button><div><p>22ct pieces are hallmarked and priced by weight at the day’s gold rate. Ask in the shop before you decide. Nothing on this page is a fixed online price.</p></div></div>
+      <div class="q"><button>Can you make a piece from a photo?</button><div><p>Yes. Bring the picture or a sketch and the shop will make it. Bridal sets are a large part of the work.</p></div></div>
+      <div class="q"><button>Do you buy gold?</button><div><p>Yes. Old gold is valued at the counter on Wednesbury Road. The shop is open Monday to Saturday, 11:30am to 6pm.</p></div></div>
     </div>
   </div>
 </main>
 
-<section class="nl" id="nl"><div class="wrap"><h2>Join Aurum Lane</h2><p style="color:var(--mu);margin:0">New drops and the sale, before they hit the homepage.</p><form class="f" id="subform"><input id="em" type="email" placeholder="Email address" aria-label="Email" required><button class="btn" type="submit">Subscribe</button></form></div></section>
+<section class="nl" id="nl"><div class="wrap"><h2>Ask the shop</h2><p style="color:var(--mu);margin:0">Leave an email and we’ll pass it to the Walsall showroom. Or call 01922 643089.</p><form class="f" id="subform"><input id="em" type="email" placeholder="Email address" aria-label="Email" required><button class="btn" type="submit">Subscribe</button></form></div></section>
 <footer id="footer"><div class="wrap">
   <div class="cols">
-    <div><h4>About us</h4><ul><li><a href="#top">Our story</a></li><li><a href="#nl">Careers</a></li></ul></div>
-    <div><h4>Need help</h4><ul><li><a href="#faq">Contact us</a></li><li><a href="#faq">Shipping and delivery</a></li><li><a href="#faq">Returns and exchanges</a></li></ul></div>
-    <div><h4>Discover</h4><ul><li><a href="#footer">Store locator</a></li><li><a href="#look">Gift edit</a></li><li><a href="#grid">Student prices</a></li></ul></div>
+    <div><h4>The shop</h4><ul><li><a href="#visit">207 Wednesbury Road</a></li><li><a href="tel:+441922643089">01922 643089</a></li></ul></div>
+    <div><h4>In store</h4><ul><li><a href="#grid">22ct gold</a></li><li><a href="#faq">Bridal and bespoke</a></li><li><a href="#faq">We buy gold</a></li></ul></div>
+    <div><h4>Visit</h4><ul><li><a href="https://share.google/SHZPJLVJ2I0hJSF7M" target="_blank" rel="noopener">Google listing</a></li><li><a href="mailto:info@laxmigold.co.uk">info@laxmigold.co.uk</a></li><li><a href="#visit">Monday to Saturday</a></li></ul></div>
   </div>
-  <div class="copy">© 2026 Aurum Lane</div>
+  <div class="copy">© 2026 Laxmi Jewellers · 207 Wednesbury Road, Walsall</div>
 </div></footer>
 
 <div class="ov" id="ov"></div>
 <aside class="dr" id="dr" aria-label="Shopping bag">
-  <div class="dh"><span>Your bag</span><button class="ib" id="cl" aria-label="Close bag">✕</button></div>
-  <div class="ship"><span id="st"></span><div class="trk"><i id="tb"></i><u style="left:83%"></u></div><div class="mk"><span>£0</span><span>Free over £25</span><span>20% at £30</span></div></div>
+  <div class="dh"><span>Shortlist</span><button class="ib" id="cl" aria-label="Close shortlist">✕</button></div>
+  <div class="ship"><span id="st">Prices are agreed in the shop, on the day’s gold rate.</span></div>
   <div class="items" id="items"></div>
   <div class="tot" id="tot"></div>
 </aside>
@@ -333,51 +339,45 @@ footer a:hover{color:var(--gh)}
 
 <script>
 const $=id=>document.getElementById(id);
-const money=n=>"£"+n.toFixed(2);
 const D=[
-  {name:"Waterproof Gold Cuban Chain",price:24,was:0,badge:"Best seller",tags:"gold waterproof chain",img:"img/p-cuban.jpg",stars:"4.8",reviews:126},
-  {name:"Freshwater Pearl Necklace",price:18,was:22.5,badge:"",tags:"pearl gold",img:"img/p-pearl.jpg",stars:"4.9",reviews:214},
-  {name:"Gold Plated Heart Pendant",price:12.5,was:0,badge:"New",tags:"gold pendant",img:"img/p-heart.jpg",stars:"4.7",reviews:86},
-  {name:"Sterling Silver Tennis Necklace",price:32,was:0,badge:"",tags:"silver choker statement",img:"img/p-tennis.jpg",stars:"4.6",reviews:64},
-  {name:"Gold Bead Layered Necklace",price:16,was:0,badge:"Best seller",tags:"gold waterproof layered",img:"img/p-beads.jpg",stars:"4.8",reviews:153},
-  {name:"Initial Pendant Necklace",price:15,was:0,badge:"",tags:"gold pendant",img:"img/p-initial.jpg",stars:"4.7",reviews:98},
-  {name:"Crystal Drop Necklace",price:21,was:28,badge:"",tags:"silver pendant statement",img:"img/p-crystal.jpg",stars:"4.5",reviews:41},
-  {name:"Gold Cross Pendant",price:13,was:0,badge:"New",tags:"gold pendant",img:"img/p-cross.jpg",stars:"4.6",reviews:57}
+  {name:"22ct curb chain",note:"Priced by weight",badge:"22ct",tags:"gold chain",img:"img/p-cuban.jpg"},
+  {name:"Pearl and gold strand",note:"Bridal",badge:"Bridal",tags:"pearl gold bridal",img:"img/p-pearl.jpg"},
+  {name:"Gold heart pendant",note:"22ct",badge:"",tags:"gold pendant",img:"img/p-heart.jpg"},
+  {name:"Diamond line necklace",note:"Bridal",badge:"Diamond",tags:"bridal",img:"img/p-tennis.jpg"},
+  {name:"Gold bead strands",note:"Layered in store",badge:"22ct",tags:"gold",img:"img/p-beads.jpg"},
+  {name:"Initial pendant",note:"Letter made to order",badge:"Bespoke",tags:"gold pendant bespoke",img:"img/p-initial.jpg"},
+  {name:"Diamond drop pendant",note:"Ask in store",badge:"Diamond",tags:"bridal pendant",img:"img/p-crystal.jpg"},
+  {name:"Gold cross pendant",note:"22ct",badge:"",tags:"gold pendant",img:"img/p-cross.jpg"}
 ];
 const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9a4 4 0 017-2.7A4 4 0 0119 12c0 4.6-7 9-7 9z"/></svg>';
 const photo=d=>`<img class="photo" src="${d.img}" alt="${d.name}">`;
 
 $("grid").innerHTML=D.map((d,i)=>{
-  const sale=d.was?Math.round((1-d.price/d.was)*100):0;
-  const badge=sale?`<span class="bd s">−${sale}%</span>`:d.badge?`<span class="bd">${d.badge}</span>`:"";
+  const badge=d.badge?`<span class="bd">${d.badge}</span>`:"";
   return `<article class="card" style="--i:${i}" data-i="${i}" data-tags="${d.tags}" data-name="${d.name.toLowerCase()}">
-    <div class="img">${photo(d)}${badge}<button class="wl" aria-label="Save ${d.name} to wishlist">${heart}</button><button class="qa">Add to bag</button></div>
+    <div class="img">${photo(d)}${badge}<button class="wl" aria-label="Save ${d.name}">${heart}</button><button class="qa">Shortlist</button></div>
     <h3>${d.name}</h3>
-    <div class="meta"><span class="star">★★★★★</span> ${d.stars} · ${d.reviews}</div>
-    <div class="pr">${money(d.price)}${d.was?`<s>${money(d.was)}</s><em>Sale</em>`:""}</div>
+    <div class="meta">${d.note}</div>
   </article>`;
 }).join("");
 
-const CATS=[["Pendant","img/p-heart.jpg","pendant"],["Pearl","img/p-pearl.jpg","pearl"],["Chains","img/p-cuban.jpg","chain"],["Layered","img/p-beads.jpg","layered"],["Chokers","img/p-tennis.jpg","choker"],["Statement","img/p-crystal.jpg","statement"]];
+const CATS=[["22ct gold","img/p-cuban.jpg","gold"],["Pearl","img/p-pearl.jpg","pearl"],["Chains","img/p-cuban.jpg","chain"],["Bridal","img/p-pearl.jpg","bridal"],["Pendants","img/p-heart.jpg","pendant"],["Bespoke","img/p-initial.jpg","bespoke"]];
 $("cats").innerHTML=CATS.map(c=>`<a class="cat" href="#grid" data-f="${c[2]}"><i><img src="${c[1]}" alt=""></i>${c[0]}</a>`).join("");
 
 const LOOK=[1,0,4];
 $("picks").innerHTML=LOOK.map(i=>{
   const d=D[i];
-  return `<article class="pick"><img src="${d.img}" alt=""><div><h3>${d.name}</h3><p>${money(d.price)}</p></div><button type="button" data-add="${i}">Add</button></article>`;
+  return `<article class="pick"><img src="${d.img}" alt=""><div><h3>${d.name}</h3><p>${d.note}</p></div><button type="button" data-add="${i}">Ask</button></article>`;
 }).join("");
 
-const M={"New in":[["Shop new",["All new arrivals","New necklaces","New pendants"]]],"Jewellery":[["Necklaces",["Pendant","Pearl","Chains","Layered"]],["Earrings",["Hoops","Studs","Drops"]],["Rings",["Bands","Signets"]],["Bracelets",["Chains","Beads","Cuffs"]]],"Waterproof":[["Shop waterproof",["Cuban chain","Bead strand","Gold plate"]]],"Gifts":[["By moment",["Tonight","Birthday","Just because"]],["By price",["Under £15","Under £25","Under £30"]]],"Offers":[["This week",["20% off over £30","Free delivery over £25","Gift box on every order"]]]};
+const M={"22ct gold":[["In the showroom",["Chains","Pendants","Beads","Pearls"]]],"Bridal":[["For the wedding",["Bridal sets","Engagement","Diamond line","Bespoke"]]],"Bespoke":[["Made to order",["From a photo","Initials","Sizing","Repairs"]]],"We buy gold":[["At the counter",["Old gold valued in store","24ct coins and bars"]]],"Visit":[["Walsall",["207 Wednesbury Road","Monday to Saturday","11:30am to 6pm","01922 643089"]]]};
 $("nav").innerHTML=Object.entries(M).map(([k,v])=>`<li><a href="#grid">${k}</a><div class="mega"><div class="wrap">${v.map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(x=>`<li><a href="#grid">${x}</a></li>`).join("")}</ul></div>`).join("")}</div></div></li>`).join("");
 
 const an=[...document.querySelectorAll(".ann div")];
 let ai=0;
 setInterval(()=>{an[ai].className="out";ai=(ai+1)%an.length;an[ai].className="";void an[ai].offsetWidth;an[ai].className="on";setTimeout(()=>an.forEach((e,i)=>{if(i!==ai)e.className=""}),700)},4200);
 
-function tick(){const end=new Date();end.setHours(24,0,0,0);let s=Math.max(0,end-Date.now())/1000;const p=n=>String(Math.floor(n)).padStart(2,"0");$("h").textContent=p(s/3600);$("m").textContent=p((s%3600)/60);$("s").textContent=p(s%60)}
-tick();setInterval(tick,1000);
-
-const chips=[["All","all"],["Gold plated","gold"],["Sterling silver","silver"],["Pearl","pearl"],["Pendant","pendant"],["Waterproof","waterproof"]];
+const chips=[["All","all"],["22ct gold","gold"],["Pearl","pearl"],["Pendant","pendant"],["Bridal","bridal"],["Bespoke","bespoke"]];
 let cur="all";
 $("chips").innerHTML=chips.map((c,i)=>`<button class="chip${i?"":" on"}" data-f="${c[1]}">${c[0]}</button>`).join("");
 const cards=[...document.querySelectorAll(".card")];
@@ -389,7 +389,7 @@ function apply(){
     c.hidden=!ok;
     if(ok){c.style.setProperty("--i",n);n++}
   });
-  $("cnt").textContent=n+" product"+(n===1?"":"s");
+  $("cnt").textContent=n+" style"+(n===1?"":"s");
 }
 function setFilter(f){
   cur=f;
@@ -399,32 +399,22 @@ function setFilter(f){
 $("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;setFilter(b.dataset.f)};
 $("cats").onclick=e=>{const a=e.target.closest("[data-f]");if(!a)return;setFilter(a.dataset.f)};
 $("q").oninput=apply;
-$("sort").onchange=e=>{
-  const v=+e.target.value;
-  [...cards].sort((a,b)=>{
-    const pa=D[+a.dataset.i].price,pb=D[+b.dataset.i].price;
-    return v===1?pa-pb:v===2?pb-pa:+a.dataset.i-+b.dataset.i;
-  }).forEach(c=>$("grid").appendChild(c));
-};
 
 let toastTimer,cart={};
 function toast(t){const el=$("toast");el.textContent=t;el.classList.add("on");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("on"),2200)}
 function bump(el){el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop")}
 function render(){
   const ids=Object.keys(cart);
-  let sub=0,count=0;
+  let count=0;
   $("items").innerHTML=ids.length?ids.map(i=>{
-    const d=D[i],q=cart[i];sub+=d.price*q;count+=q;
-    return `<div class="it"><div class="th"><img src="${d.img}" alt=""></div><div><h5>${d.name}</h5><div>${money(d.price)}</div><div class="qty"><button data-d="-1" data-i="${i}" aria-label="Decrease quantity">−</button><span>${q}</span><button data-d="1" data-i="${i}" aria-label="Increase quantity">+</button></div></div></div>`;
-  }).join(""):'<div class="empty">Your bag is empty.<br>Add a necklace to start the stack.</div>';
-  const off=sub>=30?sub*0.2:0;
-  const ship=sub>=25||!sub?0:3.95;
+    const d=D[i];count+=1;
+    return `<div class="it"><div class="th"><img src="${d.img}" alt=""></div><div><h5>${d.name}</h5><div>${d.note}</div><div class="qty"><button data-d="-1" data-i="${i}" aria-label="Remove">✕</button></div></div></div>`;
+  }).join(""):'<div class="empty">Nothing saved yet.<br>Shortlist a piece, then call the shop.</div>';
   $("bc").textContent=count;
-  $("tb").style.width=Math.min(100,sub/30*100)+"%";
-  $("st").textContent=sub>=30?"Free delivery and 20% off are both unlocked":sub>=25?"Free delivery unlocked. "+money(30-sub)+" more for 20% off":"Spend "+money(Math.max(0,25-sub))+" more for free delivery";
-  $("tot").innerHTML=`<div class="row"><span>Subtotal</span><span>${money(sub)}</span></div>${off?`<div class="row g"><span>Cyber Sale, 20% off</span><span>−${money(off)}</span></div>`:""}<div class="row"><span>Delivery</span><span>${!sub?"—":ship?"£3.95":"Free"}</span></div><div class="row t"><span>Total</span><span>${money(sub-off+ship)}</span></div><button class="btn" id="co" type="button">Checkout</button>`;
+  $("st").textContent=count?"Call 01922 643089 and mention what you’ve saved. Gold is priced in the shop.":"Prices are agreed in the shop, on the day’s gold rate.";
+  $("tot").innerHTML=count?`<a class="btn" href="tel:+441922643089">Call 01922 643089</a>`:"";
 }
-function add(i){cart[i]=(cart[i]||0)+1;render();bump($("bagb"));toast("Added "+D[i].name)}
+function add(i){cart[i]=1;render();bump($("bagb"));toast("Saved "+D[i].name)}
 $("grid").onclick=e=>{
   const card=e.target.closest(".card");if(!card)return;
   if(e.target.closest(".wl")){
@@ -436,8 +426,7 @@ $("grid").onclick=e=>{
   if(e.target.closest(".qa"))add(card.dataset.i);
 };
 document.addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(b)add(b.dataset.add)});
-$("items").onclick=e=>{const b=e.target.closest("button[data-i]");if(!b)return;const i=b.dataset.i;cart[i]=(cart[i]||0)+(+b.dataset.d);if(cart[i]<1)delete cart[i];render()};
-$("tot").onclick=e=>{if(e.target.id==="co")toast(Object.keys(cart).length?"Checkout isn’t connected in this preview":"Your bag is empty")};
+$("items").onclick=e=>{const b=e.target.closest("button[data-i]");if(!b)return;delete cart[b.dataset.i];render()};
 function bag(open){document.body.classList.toggle("open",open)}
 $("bagb").onclick=()=>bag(true);
 $("ov").onclick=$("cl").onclick=()=>bag(false);
@@ -447,6 +436,19 @@ render();
 document.querySelectorAll(".q button").forEach(b=>b.onclick=()=>b.parentElement.classList.toggle("on"));
 $("subform").onsubmit=e=>{e.preventDefault();toast("You’re on the list")};
 $("theme").onclick=()=>{const root=document.documentElement,light=root.dataset.theme!=="light";root.dataset.theme=light?"light":"dark";$("theme").textContent=light?"Dark mode":"Light mode"};
+
+const lookv=$("lookv");
+if(lookv && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const fade=1.15;
+  const soften=()=>{
+    if(lookv.duration){
+      const edge=Math.min(lookv.currentTime, Math.max(0, lookv.duration-lookv.currentTime));
+      lookv.style.opacity=Math.max(0, Math.min(1, edge/fade));
+    }
+    requestAnimationFrame(soften);
+  };
+  requestAnimationFrame(soften);
+}
 </script>
 </body>
 </html>
