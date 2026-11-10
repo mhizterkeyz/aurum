@@ -4,20 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Necklaces — Aurum Lane</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap">
 <style>
-:root{--bg:#121212;--sf:#1b1b1b;--sf2:#262626;--tx:#f3f1ec;--mu:#a6a39b;--ln:#2f2f2f;--gold:#d9ac3c;--gh:#f2d27a;--sale:#e5484d;--btn:#f3f1ec;--btx:#121212;
+:root{--bg:#0e0e0e;--sf:#171717;--sf2:#242424;--tx:#f6f1e8;--mu:#b7b1a6;--ln:#2c2c2c;--gold:#d9ac3c;--gh:#f2d27a;--sale:#e5484d;--btn:#f3f1ec;--btx:#121212;--paper:#f3efe8;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-:root[data-theme="light"]{--bg:#fff;--sf:#f6f4ef;--sf2:#ebe7de;--tx:#151515;--mu:#5f5c55;--ln:#dedad0;--gold:#a97b12;--gh:#7a5600;--btn:#151515;--btx:#fff}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;color-scheme:dark}
+:root[data-theme="light"]{--bg:#f7f4ef;--sf:#fff;--sf2:#efeae2;--tx:#161616;--mu:#5e5a53;--ln:#e4ddd2;--gold:#a97b12;--gh:#7a5600;--btn:#161616;--btx:#fff;--paper:#f3efe8}
+html{scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));scroll-behavior:smooth;color-scheme:dark}
 :root[data-theme="light"]{color-scheme:light}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.55 Jost,system-ui,sans-serif;transition:background .5s,color .5s;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.55 Jost,system-ui,sans-serif;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:40}
+img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
 ul{list-style:none;margin:0;padding:0}
 .wrap{max-width:1360px;margin:0 auto;padding:0 24px}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:-.01em}
 
 .ann{height:38px;background:var(--gold);color:#1a1200;position:relative;overflow:hidden;font-weight:500;font-size:13.5px}
 .ann div{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:translateY(100%);transition:.7s cubic-bezier(.2,.8,.2,1)}
@@ -26,262 +28,425 @@ ul{list-style:none;margin:0;padding:0}
 .util a:hover,.util button:hover{color:var(--tx)}
 .util button{background:none;border:0;padding:0;color:inherit}
 
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-block:1px solid var(--ln)}
-.hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px}
-.logo{font-weight:500;font-size:22px;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em}
-.nav{display:flex;height:100%;gap:6px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln)}
+.hdr{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.logo{font-weight:500;font-size:20px;letter-spacing:.34em;text-transform:uppercase;padding-left:.34em}
+.nav{display:flex;height:100%;gap:4px}
 .nav li{display:flex;align-items:center}
 .nav>li>a{padding:0 12px;height:100%;display:flex;align-items:center;font-weight:500;font-size:14px;position:relative}
-.nav>li>a::after{content:"";position:absolute;left:12px;right:12px;bottom:16px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
+.nav>li>a::after{content:"";position:absolute;left:12px;right:12px;bottom:18px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
 .nav>li:hover>a::after,.nav>li:focus-within>a::after{transform:scaleX(1)}
 .nav>li:last-child>a{color:var(--sale)}
-.mega{position:absolute;left:0;right:0;top:100%;background:var(--sf);border-bottom:1px solid var(--ln);padding:30px 0 34px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.3s}
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--sf);border-bottom:1px solid var(--ln);padding:28px 0 32px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.3s}
 .nav li:hover .mega,.nav li:focus-within .mega{opacity:1;visibility:visible;transform:none}
 .mega .wrap{display:flex;gap:64px}
 .mega h4{margin:0 0 10px;font-weight:600;font-size:14px}
 .mega li{padding:3px 0}.mega a{color:var(--mu);font-size:14px}.mega a:hover{color:var(--gh)}
-.act{display:flex;justify-content:flex-end;align-items:center;gap:14px}
-.sr input{width:150px;background:var(--sf);border:1px solid var(--ln);border-radius:99px;color:var(--tx);padding:9px 16px;font:inherit;font-size:14px;transition:width .5s cubic-bezier(.2,.8,.2,1),border-color .3s}
-.sr input:focus{width:260px;border-color:var(--gold);outline:0}
+.act{display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.sr input{width:158px;background:var(--sf);border:1px solid var(--ln);border-radius:99px;color:var(--tx);padding:9px 16px;font:inherit;font-size:14px;transition:width .5s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.sr input:focus{width:250px;border-color:var(--gold);outline:0}
 .ib{background:none;border:0;position:relative;display:grid;place-items:center;width:38px;height:38px}
 .ib svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6}
 .ib b{position:absolute;top:0;right:-2px;min-width:18px;height:18px;border-radius:9px;background:var(--gold);color:#1a1200;font-size:11px;display:grid;place-items:center;font-weight:600}
 .ib.pop b{animation:pop .5s}
 @keyframes pop{40%{transform:scale(1.5)}}
 
-.cats{display:flex;gap:26px;justify-content:center;padding:28px 0 6px;overflow-x:auto}
-.cat{text-align:center;font-size:13px;flex:0 0 auto}
-.cat i{display:block;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#2b2b2b,#171717);border:1px solid var(--ln);margin:0 auto 8px;overflow:hidden;transition:border-color .3s,transform .4s}
-.cat:hover i{border-color:var(--gold);transform:translateY(-4px)}
-.cat svg{width:100%;transform:scale(1.15)}
-:root[data-theme="light"] .cat i,:root[data-theme="light"] .img{background:radial-gradient(circle at 50% 35%,#fff,#e9e5db)}
+.hero{position:relative;min-height:min(78vh,760px);display:flex;align-items:flex-end;color:#f6f1e8;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2}
+.hero .veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,7,6,.78) 0%,rgba(8,7,6,.28) 48%,rgba(8,7,6,.05) 100%)}
+.hero .wrap{padding-top:80px;padding-bottom:72px;max-width:1360px}
+.eyebrow{margin:0 0 10px;letter-spacing:.22em;text-transform:uppercase;font-size:12px;font-weight:500;color:#f2d27a}
+.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(56px,7vw,104px);line-height:.9;margin:0 0 16px;max-width:9ch;color:#f6f1e8}
+.hero p{max-width:380px;margin:0 0 26px;color:#efe7da;font-weight:300;font-size:17px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;max-width:190px}
+.btn{background:var(--btn);color:var(--btx);border:0;border-radius:99px;padding:13px 26px;font-weight:500;transition:transform .3s,background .3s;display:inline-block}
+.btn:hover{transform:translateY(-2px);background:var(--gh);color:#1a1200}
+.btn.ghost{background:transparent;color:#f6f1e8;border:1px solid rgba(246,241,232,.55)}
+.btn.ghost:hover{background:#f6f1e8;color:#1a1200}
 
-.crumb{padding:22px 0 0;font-size:13px;color:var(--mu)}
-h1{font-weight:400;font-size:clamp(34px,4vw,48px);margin:6px 0 8px;letter-spacing:.01em}
-.intro{max-width:640px;color:var(--mu);margin:0 0 18px}
-.chips{display:flex;gap:10px;flex-wrap:wrap}
-.chip{border:1px solid var(--ln);background:none;border-radius:99px;padding:8px 18px;font-size:14px;transition:.3s}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--ln)}
+.trust div{padding:18px 8px;text-align:center;font-size:13px;color:var(--mu)}
+.trust strong{display:block;color:var(--tx);font-weight:500;font-size:14px;margin-bottom:2px}
+
+.cats{display:flex;gap:28px;justify-content:center;padding:36px 0 8px;overflow-x:auto}
+.cat{text-align:center;font-size:13px;letter-spacing:.04em;flex:0 0 auto;color:var(--mu)}
+.cat i{display:block;width:112px;height:112px;border-radius:50%;margin:0 auto 10px;overflow:hidden;border:1px solid var(--ln);background:var(--paper);transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.cat:hover i{border-color:var(--gold);transform:translateY(-4px)}
+.cat:hover img{transform:scale(1.06)}
+.cat:hover{color:var(--tx)}
+
+.stories{display:grid;grid-template-columns:1.45fr 1fr;grid-template-rows:268px 268px;gap:14px;margin:34px 0 10px}
+.story{position:relative;border-radius:18px;overflow:hidden;display:flex;align-items:flex-end;color:#f6f1e8;min-height:220px}
+.story img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story.big{grid-row:1 / span 2}
+.story.big img{object-position:center 20%}
+.story .cap{position:relative;padding:22px;background:linear-gradient(transparent,rgba(0,0,0,.62));width:100%}
+.story h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:40px;line-height:.95;margin:0 0 6px}
+.story p{margin:0;font-size:14px;color:#f3ecdf}
+.story.sale{background:var(--sf);border:1px solid var(--ln);color:var(--tx);align-items:stretch}
+.story.sale .cap{background:none;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.story.hot{background:linear-gradient(var(--sf),var(--sf)) padding-box,conic-gradient(from var(--a),var(--gold),#7a4a00,var(--gh),var(--gold)) border-box;border:1.5px solid transparent;animation:spin 6s linear infinite}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.story .tag{align-self:flex-start}
+.cd{display:flex;gap:6px;margin-top:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.cd b{background:var(--sf2);border-radius:8px;padding:6px 10px;font-size:20px;min-width:46px;text-align:center;color:var(--tx)}
+.tag{display:inline-block;background:var(--sale);color:#fff;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:99px;margin-bottom:8px}
+
+.shop-head{padding-top:28px}
+.crumb{padding:8px 0 0;font-size:13px;color:var(--mu)}
+h1.page{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(48px,5vw,72px);margin:4px 0 8px;line-height:.95}
+.intro{max-width:560px;color:var(--mu);margin:0 0 18px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--ln);background:none;border-radius:99px;padding:8px 16px;font-size:14px;transition:.3s}
 .chip:hover{border-color:var(--gold)}
 .chip.on{background:var(--btn);color:var(--btx);border-color:var(--btn)}
 
-.deals{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:14px;margin:30px 0 8px}
-.deal{position:relative;border-radius:14px;padding:20px 22px;background:var(--sf);border:1px solid var(--ln);overflow:hidden;transition:transform .4s,border-color .4s}
-.deal:hover{transform:translateY(-4px);border-color:var(--gold)}
-.deal::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(242,210,122,.16) 50%,transparent 60%);transform:translateX(-120%);transition:transform .9s}
-.deal:hover::after{transform:translateX(120%)}
-.deal strong{display:block;font-size:30px;font-weight:500;line-height:1.1;color:var(--gh)}
-.deal span{color:var(--mu);font-size:14px}
-.deal.hot{background:linear-gradient(#1b1b1b,#1b1b1b) padding-box,conic-gradient(from var(--a),var(--gold),#7a4a00,var(--gh),var(--gold)) border-box;border:1.5px solid transparent;animation:spin 5s linear infinite}
-:root[data-theme="light"] .deal.hot{background:linear-gradient(#fff,#fff) padding-box,conic-gradient(from var(--a),var(--gold),#7a4a00,var(--gh),var(--gold)) border-box}
-@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
-@keyframes spin{to{--a:360deg}}
-.cd{display:flex;gap:6px;margin-top:10px;font-weight:500;font-variant-numeric:tabular-nums}
-.cd b{background:var(--sf2);border-radius:8px;padding:4px 9px;font-size:18px;min-width:42px;text-align:center}
-.tag{display:inline-block;background:var(--sale);color:#fff;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;margin-bottom:8px}
-
-.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0 16px;color:var(--mu);font-size:14px}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:22px 0 14px;color:var(--mu);font-size:14px}
 .bar select{background:var(--sf);color:var(--tx);border:1px solid var(--ln);border-radius:8px;padding:8px 12px;font:inherit}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 18px}
-.card{animation:in .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*70ms)}
-@keyframes in{from{opacity:0;transform:translateY(26px)}}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 16px}
+.card{animation:in .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*60ms)}
+@keyframes in{from{opacity:0;transform:translateY(22px)}}
 .card[hidden]{display:none}
-.img{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#2c2c2c,#161616)}
-.img>svg:first-child{position:absolute;inset:6% 4% 0;width:92%;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.card:hover .img>svg:first-child{transform:scale(1.1)}
-.bd{position:absolute;top:12px;left:12px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--btn);color:var(--btx)}
+.img{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--paper)}
+.img .photo{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.card:hover .photo{transform:scale(1.05)}
+.bd{position:absolute;top:12px;left:12px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:#fff;color:#161616}
 .bd.s{background:var(--sale);color:#fff}
-.wl{position:absolute;top:8px;right:8px;background:none;border:0;width:36px;height:36px;display:grid;place-items:center}
-.wl svg{width:21px;fill:none;stroke:currentColor;stroke-width:1.7;transition:.3s}
-.wl.on svg{fill:var(--gold);stroke:var(--gold);animation:pop .5s}
-.qa{position:absolute;left:12px;right:12px;bottom:12px;background:var(--btn);color:var(--btx);border:0;border-radius:99px;padding:11px;font-weight:500;transform:translateY(60px);opacity:0;transition:.4s cubic-bezier(.2,.8,.2,1)}
+.wl{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.86);border:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#161616}
+.wl svg{width:18px;fill:none;stroke:currentColor;stroke-width:1.7;transition:.3s}
+.wl.on svg{fill:var(--gold);stroke:var(--gold)}
+.qa{position:absolute;left:12px;right:12px;bottom:12px;background:#161616;color:#fff;border:0;border-radius:99px;padding:11px;font-weight:500;transform:translateY(16px);opacity:0;transition:.35s cubic-bezier(.2,.8,.2,1)}
 .card:hover .qa,.qa:focus-visible{transform:none;opacity:1}
 @media(hover:none){.qa{transform:none;opacity:1}}
 .card h3{font-weight:400;font-size:15px;margin:12px 0 2px}
+.meta{color:var(--mu);font-size:13px;margin-bottom:2px}
+.meta .star{color:var(--gold);letter-spacing:1px}
 .pr{font-weight:500}.pr s{color:var(--mu);font-weight:400;margin-left:8px}.pr em{font-style:normal;color:var(--sale);margin-left:8px;font-size:13px}
 
-.seo{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:70px 0 40px;color:var(--mu)}
-.seo h2,.faq h2{font-weight:400;font-size:28px;color:var(--tx);margin:0 0 12px}
-.faq{max-width:820px;padding-bottom:60px}
-.q{border-bottom:1px solid var(--ln)}
-.q button{width:100%;text-align:left;background:none;border:0;padding:18px 0;font-size:16px;display:flex;justify-content:space-between}
-.q button::after{content:"+";transition:transform .4s;color:var(--gold);font-size:22px;line-height:1}
-.q.on button::after{transform:rotate(135deg)}
-.q div{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
-.q.on div{grid-template-rows:1fr}
-.q p{overflow:hidden;margin:0;color:var(--mu)}.q.on p{padding-bottom:18px}
+.look{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin:72px 0 20px;align-items:center}
+.look figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#ddd}
+.look img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.look h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(40px,4vw,64px);line-height:.95;margin:0 0 12px}
+.look .lead{color:var(--mu);margin:0 0 22px;max-width:440px}
+.picks{display:grid;gap:12px}
+.pick{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:10px;border:1px solid var(--ln);border-radius:14px;background:var(--sf)}
+.pick img{width:72px;height:88px;object-fit:cover;border-radius:8px;background:var(--paper)}
+.pick h3{margin:0;font-size:15px;font-weight:500}
+.pick p{margin:2px 0 0;color:var(--mu);font-size:14px}
+.pick button{border:1px solid var(--ln);background:none;border-radius:99px;padding:8px 14px;font-size:13px}
+.pick button:hover{border-color:var(--gold)}
 
-.nl{background:var(--sf);border-block:1px solid var(--ln);padding:50px 0;text-align:center}
-.nl h2{font-weight:400;margin:0 0 6px;font-size:28px}
+.reviews{padding:30px 0 10px}
+.reviews h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:42px;margin:0 0 16px}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rev article{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:22px}
+.rev .star{color:var(--gold);letter-spacing:2px}
+.rev p{font-size:16px;margin:10px 0 16px}
+.rev span{color:var(--mu);font-size:13px}
+
+.seo{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:64px 0 20px;color:var(--mu)}
+.seo h2,.faq h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:32px;color:var(--tx);margin:0 0 10px}
+.faq{max-width:820px;padding-bottom:50px}
+.q{border-bottom:1px solid var(--ln)}
+.q button{width:100%;text-align:left;background:none;border:0;padding:18px 0;font-size:16px;display:flex;justify-content:space-between;gap:16px}
+.q button::after{content:"+";color:var(--gold);font-size:22px;line-height:1;transition:transform .35s}
+.q.on button::after{transform:rotate(45deg)}
+.q div{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.q.on div{grid-template-rows:1fr}
+.q p{overflow:hidden;margin:0;color:var(--mu)}
+.q.on p{padding-bottom:16px}
+
+.nl{background:var(--sf);border-block:1px solid var(--ln);padding:56px 0;text-align:center}
+.nl h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0 0 6px;font-size:40px}
 .nl .f{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
-.nl input{width:min(340px,100%);background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:12px 20px;color:var(--tx);font:inherit}
-.btn{background:var(--btn);color:var(--btx);border:0;border-radius:99px;padding:12px 28px;font-weight:500;transition:transform .3s,background .3s}
-.btn:hover{transform:translateY(-2px);background:var(--gh);color:#1a1200}
+.nl input{width:min(340px,100%);background:var(--bg);border:1px solid var(--ln);border-radius:99px;padding:13px 20px;color:var(--tx);font:inherit}
 footer{padding:44px 0 30px;color:var(--mu);font-size:14px}
-footer .wrap{display:flex;gap:70px;flex-wrap:wrap}footer h4{color:var(--tx);margin:0 0 10px;font-weight:600}footer li{padding:2px 0}
-footer a:hover{color:var(--gh)}.copy{width:100%;border-top:1px solid var(--ln);padding-top:20px;margin-top:10px}
+footer .cols{display:flex;gap:70px;flex-wrap:wrap}
+footer h4{color:var(--tx);margin:0 0 10px;font-weight:500}
+footer li{padding:3px 0}
+footer a:hover{color:var(--gh)}
+.copy{border-top:1px solid var(--ln);padding-top:18px;margin-top:28px}
 
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:.4s;z-index:50}
-.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);border-left:1px solid var(--ln);z-index:51;transform:translateX(105%);transition:transform .55s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);border-left:1px solid var(--ln);z-index:51;transform:translateX(105%);transition:transform .5s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
 .open .ov{opacity:1;visibility:visible}.open .dr{transform:none}
-.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--ln);font-size:18px;font-weight:500}
-.ship{padding:16px 24px;border-bottom:1px solid var(--ln);font-size:14px}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ln);font-size:18px;font-weight:500}
+.ship{padding:16px 22px;border-bottom:1px solid var(--ln);font-size:14px}
 .trk{position:relative;height:6px;background:var(--sf2);border-radius:9px;margin:12px 0 4px}
-.trk i{position:absolute;inset:0 auto 0 0;width:0;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--gh));transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.trk i{position:absolute;inset:0 auto 0 0;width:0;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--gh));transition:width .6s cubic-bezier(.2,.8,.2,1)}
 .trk u{position:absolute;top:-4px;width:2px;height:14px;background:var(--mu)}
 .mk{display:flex;justify-content:space-between;font-size:12px;color:var(--mu)}
-.items{flex:1;overflow-y:auto;padding:8px 24px}
-.it{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--ln);animation:in .5s both}
-.it .th{width:72px;height:90px;border-radius:8px;background:radial-gradient(circle at 50% 30%,#2c2c2c,#161616);flex:none;overflow:hidden}
-.it .th svg{width:100%}
-.it h5{margin:0;font-weight:500;font-size:14px}
+.items{flex:1;overflow:auto;padding:8px 22px}
+.it{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--ln)}
+.it .th{width:72px;height:90px;border-radius:8px;overflow:hidden;background:var(--paper);flex:none}
+.it .th img{width:100%;height:100%;object-fit:cover}
+.it h5{margin:0 0 4px;font-weight:500;font-size:14px}
 .qty{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ln);border-radius:99px;margin-top:8px}
 .qty button{background:none;border:0;width:28px;height:28px;font-size:16px}
-.empty{text-align:center;color:var(--mu);padding:60px 10px}
-.tot{padding:18px 24px 24px;border-top:1px solid var(--ln)}
-.row{display:flex;justify-content:space-between;padding:3px 0;color:var(--mu)}.row.g{color:var(--gh)}.row.t{color:var(--tx);font-size:18px;font-weight:500;padding-top:10px}
-.tot .btn{width:100%;margin-top:14px;padding:14px}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--btn);color:var(--btx);padding:12px 22px;border-radius:99px;font-weight:500;transition:transform .5s cubic-bezier(.2,1.3,.4,1);z-index:60}
+.empty{text-align:center;color:var(--mu);padding:48px 10px}
+.tot{padding:16px 22px 22px;border-top:1px solid var(--ln)}
+.row{display:flex;justify-content:space-between;padding:3px 0;color:var(--mu)}
+.row.g{color:var(--gh)}.row.t{color:var(--tx);font-size:18px;font-weight:500;padding-top:8px}
+.tot .btn{width:100%;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:var(--btn);color:var(--btx);padding:12px 20px;border-radius:99px;font-weight:500;transition:.45s cubic-bezier(.2,.8,.2,1);z-index:70}
 .toast.on{transform:translate(-50%,0)}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.deals{grid-template-columns:1fr 1fr}.seo{grid-template-columns:1fr;gap:30px}}
-@media(max-width:700px){.nav,.util a{display:none}.hdr{grid-template-columns:auto 1fr}.logo{font-size:17px;padding:0}.grid{grid-template-columns:repeat(2,1fr);gap:20px 10px}.sr input{width:110px}.sr input:focus{width:150px}.deals{grid-template-columns:1fr}.cats{justify-content:flex-start}}
+
+@media(max-width:1100px){
+  .stories{grid-template-columns:1fr 1fr;grid-template-rows:320px 240px}
+  .story.big{grid-column:1 / -1;grid-row:auto;min-height:420px}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .look{grid-template-columns:1fr}
+  .look figure{aspect-ratio:16/10;max-height:520px}
+}
+@media(max-width:760px){
+  .nav,.util a{display:none}
+  .hdr{grid-template-columns:auto 1fr}
+  .logo{font-size:15px;letter-spacing:.22em;padding-left:.22em}
+  .hero{min-height:86vh}
+  .hero .veil{background:linear-gradient(transparent 20%,rgba(8,7,6,.82))}
+  .hero .wrap{padding-bottom:36px}
+  .trust{grid-template-columns:1fr 1fr}
+  .cats{justify-content:flex-start;padding-left:24px;padding-right:24px}
+  .stories{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr;gap:18px 10px}
+  .rev,.seo{grid-template-columns:1fr}
+  .sr input,.sr input:focus{width:0;padding:0;border:0}
+  .pick{grid-template-columns:64px 1fr}
+  .pick button{grid-column:2}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute"><defs>
-<radialGradient id="rgG" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff3c4"/><stop offset=".45" stop-color="#e0b341"/><stop offset="1" stop-color="#8a5f12"/></radialGradient>
-<radialGradient id="rgS" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#cfd4da"/><stop offset="1" stop-color="#6b7280"/></radialGradient>
-<radialGradient id="rgP" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#f1e9e4"/><stop offset="1" stop-color="#b3a49c"/></radialGradient>
-<linearGradient id="lgZ" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#cfe9ff"/><stop offset="1" stop-color="#7fb6e6"/></linearGradient>
-<filter id="sh"><feGaussianBlur stdDeviation="2.2"/></filter></defs></svg>
-
-<div class="ann"><div class="on">20% off when you spend £30. Cyber Sale ends tonight</div><div>Free shipping on orders over £25</div><div>4 for £15 mix and match on selected styles</div></div>
-<div class="wrap util"><a href="#">Find a store</a><a href="#">Sign in</a><a href="#">Wishlist</a><button id="theme">Light mode</button></div>
+<div class="ann"><div class="on">20% off when you spend £30. Cyber Sale ends tonight</div><div>Free UK delivery on orders over £25</div><div>Every necklace arrives in a gift box</div></div>
+<div class="wrap util"><a href="#footer">Find a store</a><a href="#nl">Sign in</a><a href="#grid">Wishlist</a><button id="theme">Light mode</button></div>
 <header><div class="wrap hdr">
   <ul class="nav" id="nav"></ul>
-  <a class="logo" href="#">Aurum Lane</a>
+  <a class="logo" href="#top">Aurum Lane</a>
   <div class="act">
     <label class="sr"><input id="q" placeholder="Search necklaces" aria-label="Search"></label>
-    <button class="ib" id="wlb" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.300-8-11a4.500 4.500 0 018-2.800A4.500 4.500 0 0120 10c0 5.700-8 11-8 11z"/></svg><b id="wc" hidden>0</b></button>
-    <button class="ib" id="bagb" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2"/></svg><b id="bc">0</b></button>
+    <button class="ib" id="wlb" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9a4 4 0 017-2.7A4 4 0 0119 12c0 4.6-7 9-7 9z"/></svg><b id="wc" hidden>0</b></button>
+    <button class="ib" id="bagb" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><b id="bc">0</b></button>
   </div>
 </div></header>
 
-<main class="wrap">
-  <div class="cats" id="cats"></div>
-  <div class="crumb"><a href="#">All Jewellery</a> / Necklaces</div>
-  <h1>Necklaces</h1>
-  <p class="intro">Pendants, pearls, chains and chokers in gold plated and sterling silver. Layer them, mix the metals and make them yours.</p>
-  <div class="chips" id="chips"></div>
+<main id="top">
+  <section class="hero">
+    <img src="img/hero-layer.jpg" alt="Layered yellow gold necklaces worn at the collarbone">
+    <div class="veil"></div>
+    <div class="wrap">
+      <p class="eyebrow">The layering edit</p>
+      <h1>Three lengths. One neckline.</h1>
+      <p>Chains, pearls and pendants in yellow gold and sterling silver, finished to be worn every day.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#grid">Shop necklaces</a>
+        <a class="btn ghost" href="#look">Shop the look</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="deals">
-    <a class="deal hot" href="#grid"><span class="tag">Cyber Sale</span><strong>20% off</strong><span>When you spend £30, applied in your bag</span><div class="cd" role="timer"><b id="h">00</b><b id="m">00</b><b id="s">00</b></div></a>
-    <a class="deal" href="#grid"><strong>4 for £15</strong><span>Mix and match singles</span></a>
-    <a class="deal" href="#grid"><strong>3 for £18</strong><span>Earrings bundle</span></a>
-    <a class="deal" href="#grid"><strong>Free shipping</strong><span>On orders over £25</span></a>
+  <div class="trust wrap">
+    <div><strong>Free UK delivery</strong>On orders over £25</div>
+    <div><strong>Waterproof gold</strong>Shower and sea safe</div>
+    <div><strong>Gift boxed</strong>Ready to give tonight</div>
+    <div><strong>Easy returns</strong>30 days, no fuss</div>
   </div>
 
-  <div class="bar"><span id="cnt">8 products</span><label>Sort by <select id="sort"><option value="0">Featured</option><option value="1">Price: low to high</option><option value="2">Price: high to low</option></select></label></div>
-  <div class="grid" id="grid"></div>
+  <div class="wrap">
+    <div class="cats" id="cats"></div>
 
-  <div class="seo">
-    <div><h2>Necklace styles</h2><p>Choose solid lines, chunky chains or softer draping pieces. Our range runs from beaded and pendant styles to chokers, layered sets and statement pieces.</p></div>
-    <div><h2>Metals and finishes</h2><p>Gold plated and sterling silver, detailed with freshwater pearls and cubic zirconia. Waterproof styles are made to be worn in the shower and the sea.</p></div>
-  </div>
-  <div class="faq"><h2>Questions</h2>
-    <div class="q"><button>Can I wear more than one necklace at once?</button><div><p>Yes. Layer chains in different lengths and thicknesses, and mix gold with silver if you like.</p></div></div>
-    <div class="q"><button>Which necklaces are waterproof?</button><div><p>Look for the waterproof label on the product card. Those pieces are safe for showers and swimming.</p></div></div>
-    <div class="q"><button>How does the 20% discount work?</button><div><p>Spend £30 or more and the discount is applied in your bag automatically. Free shipping starts at £25.</p></div></div>
+    <div class="stories">
+      <a class="story big" href="#look">
+        <img src="img/edit-pearl.jpg" alt="Freshwater pearls layered over a fine gold chain">
+        <div class="cap"><p class="eyebrow">Worn together</p><h2>The pearl edit</h2><p>A strand, a fine chain, and nothing else competing.</p></div>
+      </a>
+      <a class="story" href="#grid">
+        <img src="img/edit-box.jpg" alt="Hands lifting a gold curb chain from a cream jewellery box">
+        <div class="cap"><h2>Gift boxed</h2><p>Arrives ready to hand over.</p></div>
+      </a>
+      <a class="story sale hot" href="#grid">
+        <div class="cap"><span class="tag">Cyber Sale</span><h2>20% off</h2><p>When you spend £30. Applied in your bag.</p><div class="cd" role="timer" aria-label="Sale countdown"><b id="h">00</b><b id="m">00</b><b id="s">00</b></div></div>
+      </a>
+    </div>
+
+    <div class="shop-head" id="shop">
+      <div class="crumb"><a href="#top">All jewellery</a> / Necklaces</div>
+      <h1 class="page">Necklaces</h1>
+      <p class="intro">Pendants, pearls, chains and chokers. Filter by metal, then layer more than one.</p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="bar"><span id="cnt">8 products</span><label>Sort by <select id="sort" aria-label="Sort products"><option value="0">Featured</option><option value="1">Price: low to high</option><option value="2">Price: high to low</option></select></label></div>
+    <div class="grid" id="grid"></div>
+
+    <section class="look" id="look">
+      <figure><img src="img/edit-pearl.jpg" alt="A pearl necklace worn with a fine gold chain"></figure>
+      <div>
+        <p class="eyebrow">Styled on</p>
+        <h2>Start with the pearl, add a chain.</h2>
+        <p class="lead">The same three pieces from the campaign, sold separately so you can build the stack.</p>
+        <div class="picks" id="picks"></div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>From people who wear them daily</h2>
+      <div class="rev">
+        <article><div class="star">★★★★★</div><p>“The Cuban chain did a week on the coast and still looks like the photo.”</p><span>Amira · Bristol · Waterproof Gold Cuban Chain</span></article>
+        <article><div class="star">★★★★★</div><p>“Layered the beads with the initial. It reads much more expensive than it was.”</p><span>Jess · Leeds · Gold Bead Layered Necklace</span></article>
+        <article><div class="star">★★★★★</div><p>“The pearl strand is the one I forget I’m wearing, which is the point.”</p><span>Hannah · London · Freshwater Pearl Necklace</span></article>
+      </div>
+    </section>
+
+    <div class="seo">
+      <div><h2>How to layer</h2><p>Put the shortest chain at the base of the neck, a mid strand on the collarbone, and one pendant lower. Mix a fine trace chain with something heavier so the lengths don’t tangle.</p></div>
+      <div><h2>Metals</h2><p>Yellow gold plate over brass, and sterling silver. Waterproof pieces are labelled on the card and are made to be worn in the shower and the sea. Pearls prefer to come off for swimming.</p></div>
+    </div>
+    <div class="faq" id="faq">
+      <h2>Questions</h2>
+      <div class="q"><button>Can I wear more than one necklace at once?</button><div><p>Yes. That’s how this edit is built. Different lengths and a mix of chain and pearl sit cleanly together.</p></div></div>
+      <div class="q"><button>Which necklaces are waterproof?</button><div><p>The Cuban chain and the gold bead strand. They’re marked on the product card. Pearls and the crystal drop should stay dry.</p></div></div>
+      <div class="q"><button>How does the 20% off work?</button><div><p>Spend £30 and the discount is taken off in your bag. Delivery is free from £25, otherwise it’s £3.95.</p></div></div>
+    </div>
   </div>
 </main>
 
-<section class="nl"><div class="wrap"><h2>Join Aurum Lane</h2><p style="color:var(--mu);margin:0">Be the first to know about new collections and sales.</p><div class="f"><input id="em" type="email" placeholder="Email address" aria-label="Email"><button class="btn" id="sub">Subscribe</button></div></div></section>
-<footer><div class="wrap">
-  <div><h4>About us</h4><ul><li><a href="#">Our story</a></li><li><a href="#">Careers</a></li></ul></div>
-  <div><h4>Need help</h4><ul><li><a href="#">Contact us</a></li><li><a href="#">Shipping and delivery</a></li><li><a href="#">Returns and exchanges</a></li></ul></div>
-  <div><h4>Discover</h4><ul><li><a href="#">Store locator</a></li><li><a href="#">Gift card</a></li><li><a href="#">Student discount</a></li></ul></div>
+<section class="nl" id="nl"><div class="wrap"><h2>Join Aurum Lane</h2><p style="color:var(--mu);margin:0">New drops and the sale, before they hit the homepage.</p><form class="f" id="subform"><input id="em" type="email" placeholder="Email address" aria-label="Email" required><button class="btn" type="submit">Subscribe</button></form></div></section>
+<footer id="footer"><div class="wrap">
+  <div class="cols">
+    <div><h4>About us</h4><ul><li><a href="#top">Our story</a></li><li><a href="#nl">Careers</a></li></ul></div>
+    <div><h4>Need help</h4><ul><li><a href="#faq">Contact us</a></li><li><a href="#faq">Shipping and delivery</a></li><li><a href="#faq">Returns and exchanges</a></li></ul></div>
+    <div><h4>Discover</h4><ul><li><a href="#footer">Store locator</a></li><li><a href="#look">Gift edit</a></li><li><a href="#grid">Student prices</a></li></ul></div>
+  </div>
   <div class="copy">© 2026 Aurum Lane</div>
 </div></footer>
 
 <div class="ov" id="ov"></div>
 <aside class="dr" id="dr" aria-label="Shopping bag">
-  <div class="dh"><span>My bag</span><button class="ib" id="cl" aria-label="Close bag">✕</button></div>
-  <div class="ship"><span id="st"></span><div class="trk"><i id="tb"></i><u style="left:83.3%"></u></div><div class="mk"><span>£0</span><span>£25 free shipping</span><span>£30 20% off</span></div></div>
+  <div class="dh"><span>Your bag</span><button class="ib" id="cl" aria-label="Close bag">✕</button></div>
+  <div class="ship"><span id="st"></span><div class="trk"><i id="tb"></i><u style="left:83%"></u></div><div class="mk"><span>£0</span><span>Free over £25</span><span>20% at £30</span></div></div>
   <div class="items" id="items"></div>
   <div class="tot" id="tot"></div>
 </aside>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-const $=id=>document.getElementById(id),f2=n=>"£"+n.toFixed(2);
-/* products drawn as catalogue renders */
-const pts=[],L=[0],pt=t=>{const u=1-t;return[u*u*14+2*u*t*50+t*t*86,u*u*8+2*u*t*118+t*t*8]};
-for(let k=0;k<=400;k++){const p=pt(k/400);pts.push(p);if(k)L.push(L[k-1]+Math.hypot(p[0]-pts[k-1][0],p[1]-pts[k-1][1]))}
-function at(i,N){const s=L[400]*i/N;let j=1;while(j<400&&L[j]<s)j++;const a=pts[j-1],b=pts[Math.min(j+1,400)];return[pts[j][0],pts[j][1],Math.atan2(b[1]-a[1],b[0]-a[0])*57.3]}
-function chain(m,st,pd){
- const col=m=="g"?"#d9ac3c":"#d3d9e0",fl=m=="g"?"url(#rgG)":"url(#rgS)",N={link:26,pearl:20,bead:30,tennis:23}[st];
- let o=`<path d="M14 8Q50 118 86 8" fill="none" stroke="${col}" stroke-width=".7"/>`;
- for(let i=0;i<=N;i++){const[x,y,a]=at(i,N);
-  o+=st=="link"?`<ellipse cx="${x}" cy="${y}" rx="3.4" ry="1.9" transform="rotate(${a+(i%2?90:0)} ${x} ${y})" fill="none" stroke="${col}" stroke-width="1.1"/>`
-  :st=="pearl"?`<circle cx="${x}" cy="${y}" r="3.1" fill="url(#rgP)"/>`
-  :st=="bead"?`<circle cx="${x}" cy="${y}" r="${i%4==2?3:1.9}" fill="${fl}"/>`
-  :`<rect x="${x-1.8}" y="${y-1.8}" width="3.6" height="3.6" transform="rotate(45 ${x} ${y})" fill="url(#lgZ)" stroke="${col}" stroke-width=".8"/>`}
- const P={heart:`<path d="M0 15c-9-7-13-12-13-17a7 7 0 0113-3 7 7 0 0113 3c0 5-4 10-13 17z" fill="${fl}"/><path d="M-8-4a4 4 0 014-3" stroke="#fff" stroke-opacity=".6" fill="none"/>`,
-  cross:`<path d="M-2.500-3h5v7h6.500v5h-6.500v14h-5V9h-6.500V4h6.500z" fill="${fl}"/>`,
-  gem:`<path d="M-8 0H8l4 7L0 22-12 7z" fill="url(#lgZ)" stroke="${col}" stroke-width="1.300"/><path d="M-12 7H12M-4 0l2 7L0 22M4 0L2 7 0 22" stroke="#fff" stroke-opacity=".6" stroke-width=".4" fill="none"/>`,
-  init:`<circle cy="9" r="9" fill="${fl}"/><text y="13.500" text-anchor="middle" font-size="12" font-family="Georgia,serif" fill="#3a2600">A</text>`,none:""}[pd];
- return`<svg viewBox="0 0 100 100"><g filter="url(#sh)" opacity=".5" transform="translate(0 5)"><path d="M14 8Q50 118 86 8" fill="none" stroke="#000" stroke-width="2.500"/></g>${o}<g transform="translate(50 63)">${P}</g></svg>`}
-const D=[["Waterproof Gold Cuban Chain",24,0,"Best Seller","gold waterproof","g","link","none"],["Freshwater Pearl Necklace",18,22.5,"","pearl gold","g","pearl","none"],["Gold Plated Heart Pendant",12.5,0,"New","gold pendant","g","link","heart"],["Sterling Silver Tennis Necklace",32,0,"","silver","s","tennis","none"],["Gold Bead Layered Necklace",16,0,"Best Seller","gold waterproof","g","bead","none"],["Initial Pendant Necklace",15,0,"","gold pendant","g","link","init"],["Crystal Drop Necklace",21,28,"","silver pendant","s","link","gem"],["Gold Cross Pendant",13,0,"New","gold pendant","g","bead","cross"]];
-const art=D.map(d=>chain(d[5],d[6],d[7]));
-const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-8-5.300-8-11a4.500 4.500 0 018-2.800A4.500 4.500 0 0120 10c0 5.700-8 11-8 11z"/></svg>';
-$("grid").innerHTML=D.map((d,i)=>{const sale=d[2]?Math.round(100-d[1]/d[2]*100):0;return`<article class="card" style="--i:${i}" data-i="${i}" data-t="${d[4]}" data-n="${d[0].toLowerCase()}"><div class="img">${art[i]}${sale?`<span class="bd s">Sale</span>`:d[3]?`<span class="bd">${d[3]}</span>`:""}<button class="wl" aria-label="Save to wishlist">${heart}</button><button class="qa">Add to bag</button></div><h3>${d[0]}</h3><div class="pr">${f2(d[1])}${d[2]?`<s>${f2(d[2])}</s><em>−${sale}%</em>`:""}</div></article>`}).join("");
-$("cats").innerHTML=[["Pendant",5],["Pearl",1],["Chains",0],["Layered",4],["Chokers",3],["Statement",6]].map(c=>`<a class="cat" href="#grid"><i>${art[c[1]]}</i>${c[0]}</a>`).join("");
+const $=id=>document.getElementById(id);
+const money=n=>"£"+n.toFixed(2);
+const D=[
+  {name:"Waterproof Gold Cuban Chain",price:24,was:0,badge:"Best seller",tags:"gold waterproof chain",img:"img/p-cuban.jpg",stars:"4.8",reviews:126},
+  {name:"Freshwater Pearl Necklace",price:18,was:22.5,badge:"",tags:"pearl gold",img:"img/p-pearl.jpg",stars:"4.9",reviews:214},
+  {name:"Gold Plated Heart Pendant",price:12.5,was:0,badge:"New",tags:"gold pendant",img:"img/p-heart.jpg",stars:"4.7",reviews:86},
+  {name:"Sterling Silver Tennis Necklace",price:32,was:0,badge:"",tags:"silver choker statement",img:"img/p-tennis.jpg",stars:"4.6",reviews:64},
+  {name:"Gold Bead Layered Necklace",price:16,was:0,badge:"Best seller",tags:"gold waterproof layered",img:"img/p-beads.jpg",stars:"4.8",reviews:153},
+  {name:"Initial Pendant Necklace",price:15,was:0,badge:"",tags:"gold pendant",img:"img/p-initial.jpg",stars:"4.7",reviews:98},
+  {name:"Crystal Drop Necklace",price:21,was:28,badge:"",tags:"silver pendant statement",img:"img/p-crystal.jpg",stars:"4.5",reviews:41},
+  {name:"Gold Cross Pendant",price:13,was:0,badge:"New",tags:"gold pendant",img:"img/p-cross.jpg",stars:"4.6",reviews:57}
+];
+const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9a4 4 0 017-2.7A4 4 0 0119 12c0 4.6-7 9-7 9z"/></svg>';
+const photo=d=>`<img class="photo" src="${d.img}" alt="${d.name}">`;
 
-/* menu */
-const M={"New In":[["Shop new",["All new arrivals","New necklaces","New earrings","New rings"]]],"Jewellery":[["Necklaces",["Pendant","Statement","Layered","Chokers"]],["Earrings",["Hoops","Studs","Drops and dangles"]],["Rings",["Stacking","Fashion","Engagement"]],["Wristwear",["Bracelets","Bangles","Cuffs"]]],"Waterproof":[["Shop by style",["Waterproof necklaces","Waterproof earrings","Waterproof rings","Waterproof gold","Waterproof silver"]]],"Gifts":[["By recipient",["For her","For him","Gift sets"]],["By price",["Under £15","Under £20","Under £30"]]],"Offers and bundles":[["Shop by offer",["20% off when you spend £30","4 for £15 mix and match","3 for £18 earrings bundle","2 for £15 stacks and packs"]]]};
-$("nav").innerHTML=Object.entries(M).map(([k,v])=>`<li><a href="#">${k}</a><div class="mega"><div class="wrap">${v.map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(x=>`<li><a href="#">${x}</a></li>`).join("")}</ul></div>`).join("")}</div></div></li>`).join("");
+$("grid").innerHTML=D.map((d,i)=>{
+  const sale=d.was?Math.round((1-d.price/d.was)*100):0;
+  const badge=sale?`<span class="bd s">−${sale}%</span>`:d.badge?`<span class="bd">${d.badge}</span>`:"";
+  return `<article class="card" style="--i:${i}" data-i="${i}" data-tags="${d.tags}" data-name="${d.name.toLowerCase()}">
+    <div class="img">${photo(d)}${badge}<button class="wl" aria-label="Save ${d.name} to wishlist">${heart}</button><button class="qa">Add to bag</button></div>
+    <h3>${d.name}</h3>
+    <div class="meta"><span class="star">★★★★★</span> ${d.stars} · ${d.reviews}</div>
+    <div class="pr">${money(d.price)}${d.was?`<s>${money(d.was)}</s><em>Sale</em>`:""}</div>
+  </article>`;
+}).join("");
 
-/* announcement rotator */
-const an=[...document.querySelectorAll(".ann div")];let ai=0;
-setInterval(()=>{an[ai].className="out";ai=(ai+1)%an.length;an[ai].className="";void an[ai].offsetWidth;an[ai].className="on";setTimeout(()=>an.forEach((e,i)=>{if(i!=ai)e.className=""}),700)},3800);
+const CATS=[["Pendant","img/p-heart.jpg","pendant"],["Pearl","img/p-pearl.jpg","pearl"],["Chains","img/p-cuban.jpg","chain"],["Layered","img/p-beads.jpg","layered"],["Chokers","img/p-tennis.jpg","choker"],["Statement","img/p-crystal.jpg","statement"]];
+$("cats").innerHTML=CATS.map(c=>`<a class="cat" href="#grid" data-f="${c[2]}"><i><img src="${c[1]}" alt=""></i>${c[0]}</a>`).join("");
 
-/* countdown to midnight */
-function tick(){const n=new Date(),e=new Date(n);e.setHours(24,0,0,0);const r=e-n,p=x=>String(x).padStart(2,"0");$("h").textContent=p(Math.floor(r/36e5));$("m").textContent=p(Math.floor(r/6e4)%60);$("s").textContent=p(Math.floor(r/1e3)%60)}tick();setInterval(tick,1000);
+const LOOK=[1,0,4];
+$("picks").innerHTML=LOOK.map(i=>{
+  const d=D[i];
+  return `<article class="pick"><img src="${d.img}" alt=""><div><h3>${d.name}</h3><p>${money(d.price)}</p></div><button type="button" data-add="${i}">Add</button></article>`;
+}).join("");
 
-/* filters, search, sort */
-const FL=[["All","all"],["Gold plated","gold"],["Sterling silver","silver"],["Pearl","pearl"],["Pendant","pendant"],["Waterproof","waterproof"]];let cur="all";
-$("chips").innerHTML=FL.map((c,i)=>`<button class="chip${i?"":" on"}" data-f="${c[1]}">${c[0]}</button>`).join("");
+const M={"New in":[["Shop new",["All new arrivals","New necklaces","New pendants"]]],"Jewellery":[["Necklaces",["Pendant","Pearl","Chains","Layered"]],["Earrings",["Hoops","Studs","Drops"]],["Rings",["Bands","Signets"]],["Bracelets",["Chains","Beads","Cuffs"]]],"Waterproof":[["Shop waterproof",["Cuban chain","Bead strand","Gold plate"]]],"Gifts":[["By moment",["Tonight","Birthday","Just because"]],["By price",["Under £15","Under £25","Under £30"]]],"Offers":[["This week",["20% off over £30","Free delivery over £25","Gift box on every order"]]]};
+$("nav").innerHTML=Object.entries(M).map(([k,v])=>`<li><a href="#grid">${k}</a><div class="mega"><div class="wrap">${v.map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(x=>`<li><a href="#grid">${x}</a></li>`).join("")}</ul></div>`).join("")}</div></div></li>`).join("");
+
+const an=[...document.querySelectorAll(".ann div")];
+let ai=0;
+setInterval(()=>{an[ai].className="out";ai=(ai+1)%an.length;an[ai].className="";void an[ai].offsetWidth;an[ai].className="on";setTimeout(()=>an.forEach((e,i)=>{if(i!==ai)e.className=""}),700)},4200);
+
+function tick(){const end=new Date();end.setHours(24,0,0,0);let s=Math.max(0,end-Date.now())/1000;const p=n=>String(Math.floor(n)).padStart(2,"0");$("h").textContent=p(s/3600);$("m").textContent=p((s%3600)/60);$("s").textContent=p(s%60)}
+tick();setInterval(tick,1000);
+
+const chips=[["All","all"],["Gold plated","gold"],["Sterling silver","silver"],["Pearl","pearl"],["Pendant","pendant"],["Waterproof","waterproof"]];
+let cur="all";
+$("chips").innerHTML=chips.map((c,i)=>`<button class="chip${i?"":" on"}" data-f="${c[1]}">${c[0]}</button>`).join("");
 const cards=[...document.querySelectorAll(".card")];
-function apply(){const q=$("q").value.trim().toLowerCase();let n=0;cards.forEach(c=>{const ok=(cur=="all"||c.dataset.t.includes(cur))&&c.dataset.n.includes(q);c.hidden=!ok;if(ok){n++;c.style.animation="none";void c.offsetWidth;c.style.animation="";c.style.setProperty("--i",n-1)}});$("cnt").textContent=n+(n==1?" product":" products")}
-$("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x==b));cur=b.dataset.f;apply()};
+function apply(){
+  const q=$("q").value.trim().toLowerCase();
+  let n=0;
+  cards.forEach(c=>{
+    const ok=(cur==="all"||c.dataset.tags.includes(cur))&&c.dataset.name.includes(q);
+    c.hidden=!ok;
+    if(ok){c.style.setProperty("--i",n);n++}
+  });
+  $("cnt").textContent=n+" product"+(n===1?"":"s");
+}
+function setFilter(f){
+  cur=f;
+  document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x.dataset.f===f));
+  apply();
+}
+$("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;setFilter(b.dataset.f)};
+$("cats").onclick=e=>{const a=e.target.closest("[data-f]");if(!a)return;setFilter(a.dataset.f)};
 $("q").oninput=apply;
-$("sort").onchange=e=>{const v=e.target.value;cards.forEach(c=>{const p=D[c.dataset.i][1];c.style.order=v==1?p*100:v==2?-p*100:c.dataset.i});apply()};
+$("sort").onchange=e=>{
+  const v=+e.target.value;
+  [...cards].sort((a,b)=>{
+    const pa=D[+a.dataset.i].price,pb=D[+b.dataset.i].price;
+    return v===1?pa-pb:v===2?pb-pa:+a.dataset.i-+b.dataset.i;
+  }).forEach(c=>$("grid").appendChild(c));
+};
 
-/* wishlist, cart */
-let tt,cart={},wl=0;
-function toast(t){const e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>e.classList.remove("on"),2200)}
-function pop(el){el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop")}
-function render(){const ids=Object.keys(cart);let sub=0,n=0;
- $("items").innerHTML=ids.length?ids.map(i=>{const d=D[i],q=cart[i];sub+=d[1]*q;n+=q;return`<div class="it"><div class="th">${art[i]}</div><div><h5>${d[0]}</h5><div>${f2(d[1])}</div><div class="qty"><button data-a="-" data-i="${i}" aria-label="Fewer">−</button>${q}<button data-a="+" data-i="${i}" aria-label="More">+</button></div></div></div>`}).join(""):`<div class="empty">Your bag is empty.<br>Add a necklace to get started.</div>`;
- const disc=sub>=30?sub*.2:0;
- $("bc").textContent=n;$("tb").style.width=Math.min(100,sub/30*100)+"%";
- $("st").textContent=sub>=30?"Free shipping and 20% off unlocked":sub>=25?"Free shipping unlocked. Spend "+f2(30-sub)+" more for 20% off":"Spend "+f2(25-sub)+" more for free shipping";
- $("tot").innerHTML=`<div class="row"><span>Subtotal</span><span>${f2(sub)}</span></div>${disc?`<div class="row g"><span>Cyber Sale 20% off</span><span>−${f2(disc)}</span></div>`:""}<div class="row"><span>Shipping</span><span>${sub>=25?"Free":sub?"£3.99":"–"}</span></div><div class="row t"><span>Total</span><span>${f2(sub-disc+(sub&&sub<25?3.99:0))}</span></div><button class="btn" id="co">Checkout</button>`}
-function add(i){cart[i]=(cart[i]||0)+1;render();pop($("bagb"));toast(D[i][0]+" added to bag")}
-$("grid").onclick=e=>{const w=e.target.closest(".wl"),a=e.target.closest(".qa");
- if(w){const on=w.classList.toggle("on");wl+=on?1:-1;$("wc").hidden=!wl;$("wc").textContent=wl;pop($("wlb"));toast(on?"Saved to wishlist":"Removed from wishlist")}
- if(a)add(a.closest(".card").dataset.i)};
-$("items").onclick=e=>{const b=e.target.closest("button");if(!b)return;const i=b.dataset.i;cart[i]+=b.dataset.a=="+"?1:-1;if(cart[i]<1)delete cart[i];render()};
-$("tot").onclick=e=>{if(e.target.id=="co")toast(Object.keys(cart).length?"Checkout is not connected in this preview":"Add an item first")};
-const open=v=>document.body.classList.toggle("open",v);
-$("bagb").onclick=()=>open(true);$("cl").onclick=$("ov").onclick=()=>open(false);
-document.onkeydown=e=>{if(e.key=="Escape")open(false)};
+let toastTimer,cart={};
+function toast(t){const el=$("toast");el.textContent=t;el.classList.add("on");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("on"),2200)}
+function bump(el){el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop")}
+function render(){
+  const ids=Object.keys(cart);
+  let sub=0,count=0;
+  $("items").innerHTML=ids.length?ids.map(i=>{
+    const d=D[i],q=cart[i];sub+=d.price*q;count+=q;
+    return `<div class="it"><div class="th"><img src="${d.img}" alt=""></div><div><h5>${d.name}</h5><div>${money(d.price)}</div><div class="qty"><button data-d="-1" data-i="${i}" aria-label="Decrease quantity">−</button><span>${q}</span><button data-d="1" data-i="${i}" aria-label="Increase quantity">+</button></div></div></div>`;
+  }).join(""):'<div class="empty">Your bag is empty.<br>Add a necklace to start the stack.</div>';
+  const off=sub>=30?sub*0.2:0;
+  const ship=sub>=25||!sub?0:3.95;
+  $("bc").textContent=count;
+  $("tb").style.width=Math.min(100,sub/30*100)+"%";
+  $("st").textContent=sub>=30?"Free delivery and 20% off are both unlocked":sub>=25?"Free delivery unlocked. "+money(30-sub)+" more for 20% off":"Spend "+money(Math.max(0,25-sub))+" more for free delivery";
+  $("tot").innerHTML=`<div class="row"><span>Subtotal</span><span>${money(sub)}</span></div>${off?`<div class="row g"><span>Cyber Sale, 20% off</span><span>−${money(off)}</span></div>`:""}<div class="row"><span>Delivery</span><span>${!sub?"—":ship?"£3.95":"Free"}</span></div><div class="row t"><span>Total</span><span>${money(sub-off+ship)}</span></div><button class="btn" id="co" type="button">Checkout</button>`;
+}
+function add(i){cart[i]=(cart[i]||0)+1;render();bump($("bagb"));toast("Added "+D[i].name)}
+$("grid").onclick=e=>{
+  const card=e.target.closest(".card");if(!card)return;
+  if(e.target.closest(".wl")){
+    const on=e.target.closest(".wl").classList.toggle("on");
+    const n=[...document.querySelectorAll(".wl.on")].length;
+    $("wc").hidden=!n;$("wc").textContent=n;bump($("wlb"));
+    toast(on?"Saved to wishlist":"Removed from wishlist");
+  }
+  if(e.target.closest(".qa"))add(card.dataset.i);
+};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(b)add(b.dataset.add)});
+$("items").onclick=e=>{const b=e.target.closest("button[data-i]");if(!b)return;const i=b.dataset.i;cart[i]=(cart[i]||0)+(+b.dataset.d);if(cart[i]<1)delete cart[i];render()};
+$("tot").onclick=e=>{if(e.target.id==="co")toast(Object.keys(cart).length?"Checkout isn’t connected in this preview":"Your bag is empty")};
+function bag(open){document.body.classList.toggle("open",open)}
+$("bagb").onclick=()=>bag(true);
+$("ov").onclick=$("cl").onclick=()=>bag(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")bag(false)});
 render();
 
-/* misc */
-document.querySelectorAll(".q button").forEach(b=>b.onclick=()=>b.parentNode.classList.toggle("on"));
-$("sub").onclick=()=>{const v=$("em").value;toast(/\S+@\S+\.\S+/.test(v)?"Thanks. You’re on the list":"Enter a valid email address")};
-$("theme").onclick=()=>{const r=document.documentElement,l=r.dataset.theme=="dark";r.dataset.theme=l?"light":"dark";$("theme").textContent=l?"Dark mode":"Light mode"};
+document.querySelectorAll(".q button").forEach(b=>b.onclick=()=>b.parentElement.classList.toggle("on"));
+$("subform").onsubmit=e=>{e.preventDefault();toast("You’re on the list")};
+$("theme").onclick=()=>{const root=document.documentElement,light=root.dataset.theme!=="light";root.dataset.theme=light?"light":"dark";$("theme").textContent=light?"Dark mode":"Light mode"};
 </script>
 </body>
 </html>
